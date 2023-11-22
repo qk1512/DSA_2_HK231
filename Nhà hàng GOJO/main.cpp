@@ -1,5 +1,5 @@
 #include "main.h"
-#include "restaurant_MAIN.cpp"
+#include "restaurant.cpp"
 
 const int startProgam = 1;
 const int endProgam = 200;
