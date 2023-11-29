@@ -47,7 +47,7 @@ void simulate(string filename)
 		else if (str == "LIMITLESS") // LIMITLESS <NUM>
 		{
 			ss >> num;
-			solution << "LIMITLESS " + to_string(num) +" : LINE " << i++ << "\n";
+			solution << "LIMITLESS " + to_string(num) +" : LINE " << i<< "\n";
 			NOT_LIKE_CODE->LIMITLESS(num);
 			solution << '\n';
 		}		
