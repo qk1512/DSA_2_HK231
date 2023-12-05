@@ -66,36 +66,23 @@ char caesarEncode(char &originalChar, int originalFreq)
     return originalChar;
 }
 
-vector<pair<char, int>> accumulateFrequencies(const vector<pair<char, int>> freq_prev)
+bool comparePairs(const std::pair<char, int> &a, const std::pair<char, int> &b)
 {
-    vector<pair<char, int>> accumulatedFreq;
-
-    for (const auto &pair : freq_prev)
+    if (a.second != b.second)
     {
-        char currentChar = pair.first;
-        int currentFreq = pair.second;
-
-        // Explicitly specify the iterator type
-        vector<std::pair<char, int>>::iterator it = find_if(accumulatedFreq.begin(), accumulatedFreq.end(),
-                                                            [currentChar](const std::pair<char, int> &element)
-                                                            {
-                                                                return element.first == currentChar;
-                                                            });
-
-        if (it != accumulatedFreq.end())
-        {
-            // If the character is found, update its frequency
-            it->second += currentFreq;
-        }
-        else
-        {
-            // If the character is not found, add a new pair to the vector
-            accumulatedFreq.push_back(make_pair(currentChar, currentFreq));
-        }
+        // Sort by frequency in descending order
+        return a.second > b.second;
     }
-
-    return accumulatedFreq;
+    else
+    {
+        // If frequencies are equal, sort by character (uppercase larger than lowercase)
+        return static_cast<int>(a.first) > static_cast<int>(b.first);
+    }
 }
+
+
+
+
 
 vector<pair<char, int>> string_Processing(string& name)
 {
@@ -157,16 +144,36 @@ vector<pair<char, int>> string_Processing(string& name)
     //^ chú ý cộng dồn lên phái đầu ví dụ dưới 'e' có 2 chỗ nên ta chọn đầu vector để giữ lại
     //! vd freq_prev = [{e,4}, {E,1}, {e,1}, {f,4}] -> kq:  freq = [{e,5}, {E,1}, {f,4}]
      //TODO
-    vector<pair<char, int>> freq = accumulateFrequencies(freq_prev);
-    
+    vector<pair<char, int>> freq;
+    for (const auto pair : freq_prev)
+    {
+        char currentChar = pair.first;
+        int currentFreq = pair.second;
+
+        std::vector<std::pair<char, int>>::iterator it = std::find_if(freq.begin(), freq.end(),
+                                                                      [currentChar](const std::pair<char, int> &element)
+                                                                      {
+                                                                          return element.first == currentChar;
+                                                                      });
+
+        if (it != freq.end())
+        {
+            // If the character is found, update its frequency
+            it->second += currentFreq;
+        }
+        else
+        {
+            // If the character is not found, add a new pair to the vector
+            freq.push_back(std::make_pair(currentChar, currentFreq));
+        }
+    }
 
     //* bước 4: sort chuỗi freq mới tìm được phía trên theo chiều giảm dần
     //^ chú ý nếu tuần suất hiện bằng nhau thì kí tự nào lớn hơn thì lớn hơn, kí tự hoa lớn hơn kí tự thường
     //TODO
-
-
-
-    return freq_prev;
+    sort(freq.begin(),freq.end(),comparePairs);
+    
+    return freq;
 }
 
 
