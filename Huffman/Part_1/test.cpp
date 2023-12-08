@@ -1,78 +1,132 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <math.h>
 #include <vector>
-#include <algorithm> // For std::find_if, std::sort
+#include <map>
+#include <stack>
+#include <queue>
+#include <list>
 #include <utility>
+#include <algorithm>
 
-// Custom comparison function for sorting in descending order
-bool comparePairs(const std::pair<char, int> &a, const std::pair<char, int> &b)
+using namespace std;
+
+char caesarEncode(char originalChar, int originalFreq)
+{
+    if (isupper(originalChar))
+    {
+        originalChar = char(int(originalChar + originalFreq - 65) % 26 + 65);
+    }
+    else
+    {
+        originalChar = char(int(originalChar + originalFreq - 97) % 26 + 97);
+    }
+    return originalChar;
+}
+
+bool comparePairs(pair<char, int> a, pair<char, int> b)
 {
     if (a.second != b.second)
     {
-        // Sort by frequency in descending order
         return a.second > b.second;
     }
     else
     {
-        // If frequencies are equal, sort by character (uppercase larger than lowercase)
-        return static_cast<int>(a.first) > static_cast<int>(b.first);
+        if (isupper(a.first) && !isupper(b.first))
+            return true;
+        else if(!isupper(a.first) && isupper(b.first))
+            return false;
+        else
+            return a.first > b.first;
     }
 }
 
-// Function to accumulate frequencies for the same characters in a vector
-std::vector<std::pair<char, int>> accumulateFrequencies(const std::vector<std::pair<char, int>> &freq_prev)
+vector<pair<char, int>> string_Processing(string &name)
 {
-    std::vector<std::pair<char, int>> freq;
+    // TODO: implement string_Processing
+    vector<pair<char, int>> freq_prev;
+    for (char c : name)
+    {
+        bool found = false;
+        for (pair<char, int> &prev : freq_prev)
+        {
+            if (prev.first == c)
+            {
+                prev.second++;
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            freq_prev.push_back(make_pair(c, 1));
+        }
+    }
 
-    for (const auto &pair : freq_prev)
+    for (char &c : name)
+    {
+        int key;
+        for (pair<char, int> pair : freq_prev)
+        {
+            if (pair.first == c)
+            {
+                key = pair.second;
+                break;
+            }
+        }
+        c = caesarEncode(c, key);
+    }
+
+    for (pair<char, int> &pair : freq_prev)
+    {
+        char originalChar = pair.first;
+        int originalFreq = pair.second;
+
+        if (isupper(originalChar))
+        {
+            pair.first = char(int(originalChar + originalFreq - 65) % 26 + 65);
+        }
+        else
+        {
+            pair.first = char(int(originalChar + originalFreq - 97) % 26 + 97);
+        }
+    }
+
+    vector<pair<char, int>> freq;
+    for (pair<char, int> pair : freq_prev)
     {
         char currentChar = pair.first;
         int currentFreq = pair.second;
 
-        std::vector<std::pair<char, int>>::iterator it = std::find_if(freq.begin(), freq.end(),
-                                                                      [currentChar](const std::pair<char, int> &element)
-                                                                      {
-                                                                          return element.first == currentChar;
-                                                                      });
-
-        if (it != freq.end())
+        bool found = false;
+        for (std::pair<char, int> &element : freq)
         {
-            // If the character is found, update its frequency
-            it->second += currentFreq;
+            if (element.first == currentChar)
+            {
+                element.second += currentFreq;
+                found = true;
+                break;
+            }
         }
-        else
+
+        if (!found)
         {
-            // If the character is not found, add a new pair to the vector
-            freq.push_back(std::make_pair(currentChar, currentFreq));
+            freq.push_back(make_pair(currentChar, currentFreq));
         }
     }
 
-    // Sort the vector in descending order using the custom comparison function
-    std::sort(freq.begin(), freq.end(), comparePairs);
-
+    sort(freq.begin(),freq.end(),comparePairs);
     return freq;
 }
 
-int main()
-{
-    // Example usage
-    std::vector<std::pair<char, int>> frequencyVector = {{'b', 1}, {'C', 2}, {'b', 2}, {'C', 1}};
+int main(){
+    string name = "tlfImdVKjobnHLpuwSLKHJOoF";
+    vector<pair<char,int>> freq = string_Processing(name);
 
-    // Display the original vector
-    std::cout << "Original Vector: ";
-    for (const auto &pair : frequencyVector)
+    for (const auto &pair : freq)
     {
-        std::cout << "(" << pair.first << "," << pair.second << ") ";
+        std::cout << "{" << pair.first << ", " << pair.second << "}" << " -> ";
     }
-
-    // Accumulate frequencies for the same characters
-    std::vector<std::pair<char, int>> accumulatedVector = accumulateFrequencies(frequencyVector);
-
-    // Display the accumulated and sorted vector
-    std::cout << "\nAccumulated and Sorted Vector: ";
-    for (const auto &pair : accumulatedVector)
-    {
-        std::cout << "(" << pair.first << "," << pair.second << ") ";
-    }
-
     return 0;
 }

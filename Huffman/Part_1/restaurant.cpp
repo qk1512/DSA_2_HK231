@@ -8,7 +8,6 @@ TODO Võ Tiến ..............
 
 #include "main.h"
 
-
 int MAXSIZE = 0;
 
 class JJK_RESTAURANT_OPERATIONS;
@@ -616,9 +615,123 @@ private:
 class HuffTree_AVL{
 
 public:
+	char caesarEncode(char originalChar, int originalFreq)
+	{
+		if (isupper(originalChar))
+		{
+			originalChar = char(int(originalChar + originalFreq - 65) % 26 + 65);
+		}
+		else
+		{
+			originalChar = char(int(originalChar + originalFreq - 97) % 26 + 97);
+		}
+		return originalChar;
+	}
+
+	bool comparePairs(pair<char, int> a, pair<char, int> b)
+	{
+		if (a.second != b.second)
+		{
+			return a.second > b.second;
+		}
+		else
+		{
+			if (isupper(a.first) && !isupper(b.first))
+				return true;
+			else if (!isupper(a.first) && isupper(b.first))
+				return false;
+			else
+				return a.first > b.first;
+		}
+	}
+
+	static bool comparePairsWrapper(const pair<char, int> &a, const pair<char, int> &b, HuffTree_AVL *instance)
+	{
+		return instance->comparePairs(a, b);
+	}
+
+	// Function to sort using member function as comparator
+	void sortPairs(std::vector<std::pair<char, int>> &pairs)
+	{
+		std::sort(pairs.begin(), pairs.end(), [this](const pair<char,int> &a, const pair<char,int> &b)
+				  { return comparePairsWrapper(a, b, this); });
+	}
+
 	vector<pair<char, int>> string_Processing(string& name)
 	{
 		//TODO: implement string_Processing
+		vector<pair<char, int>> freq_prev;
+		for (char c : name)
+		{
+			bool found = false;
+			for (pair<char, int> &prev : freq_prev)
+			{
+				if (prev.first == c)
+				{
+					prev.second++;
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+			{
+				freq_prev.push_back(make_pair(c, 1));
+			}
+		}
+
+		for (char &c : name)
+		{
+			int key;
+			for (pair<char, int> pair : freq_prev)
+			{
+				if (pair.first == c)
+				{
+					key = pair.second;
+					break;
+				}
+			}
+			c = caesarEncode(c, key);
+		}
+
+		for (pair<char,int> &pair : freq_prev)
+		{
+			char originalChar = pair.first;
+			int originalFreq = pair.second;
+
+			if (isupper(originalChar))
+			{
+				pair.first = char(int(originalChar + originalFreq - 65) % 26 + 65);
+			}
+			else
+			{
+				pair.first = char(int(originalChar + originalFreq - 97) % 26 + 97);
+			}
+		}
+
+		vector<pair<char, int>> freq;
+		for (pair<char,int> pair : freq_prev)
+		{
+			char currentChar = pair.first;
+			int currentFreq = pair.second;
+
+			bool found = false;
+			for (std::pair<char,int> &element : freq)
+			{
+				if(element.first == currentChar){
+					element.second += currentFreq;
+					found = true;
+					break;
+				}
+			}
+
+			if(!found){
+				freq.push_back(make_pair(currentChar,currentFreq));
+			}
+		}
+
+		//sort(freq.begin(),freq.end(),comparePairs);
+		sortPairs(freq);
+		return freq;
 	}
 
 	int encode(string name){
@@ -662,7 +775,7 @@ public:
 	
 	//* xử lí nhà hàng Sukuna
 	void KEITEIKEN(int num){heap.remove_KEITEIKEN(num);}
-	void CLEAVE(int num){heap.print_CLEAVE(num);}
+	void CLEAVE(int num){/* heap.print_CLEAVE(num); */}
 
 	//* xử lý HuffTree_AVL
 	void HAND(){/* New_customers_arrive.print(); */}

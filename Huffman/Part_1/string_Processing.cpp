@@ -38,20 +38,6 @@ vector<pair<char,int>> getCharFrequency(const string &name){
     return freq_prev;
 }
 
-/* vector<pair<char,int>> caesarEncode(vector<pair<char,int>> freq_prev){
-    vector<pair<char,int>> encodedFreq;
-
-    for(const auto &pair : freq_prev){
-        char originalChar = pair.first;
-        int originalFreq = pair.second;
-
-        char encodedChar = (originalChar + originalFreq) % 128;
-
-        encodedFreq.push_back(make_pair(encodedChar, originalFreq));
-    }
-
-    return encodedFreq;
-} */
 
 char caesarEncode(char &originalChar, int originalFreq)
 {
@@ -66,22 +52,18 @@ char caesarEncode(char &originalChar, int originalFreq)
     return originalChar;
 }
 
-bool comparePairs(const std::pair<char, int> &a, const std::pair<char, int> &b)
+bool comparePairs(pair<char, int> a,pair<char, int> b)
 {
     if (a.second != b.second)
     {
-        // Sort by frequency in descending order
         return a.second > b.second;
     }
     else
     {
-        // If frequencies are equal, sort by character (uppercase larger than lowercase)
-        return static_cast<int>(a.first) > static_cast<int>(b.first);
+        if(isupper(a.first) || isupper(b.first)) return isupper(a.first) && !isupper(b.first);
+        else return a.first > b.first;
     }
 }
-
-
-
 
 
 vector<pair<char, int>> string_Processing(string& name)
@@ -114,6 +96,20 @@ vector<pair<char, int>> string_Processing(string& name)
     //! kq : name = "eEefeeefff", freq_prev = [{e,4}, {E,1}, {e,1}, {f,4}]
     //TODO
 
+    for (char &c : name)
+    {
+        int key;
+        for (pair<char, int> pair : freq_prev)
+        {
+            if (pair.first == c)
+            {
+                key = pair.second;
+                break;
+            }
+        }
+        c = caesarEncode(c, key);
+    }
+
     for(auto &pair : freq_prev){
         char originalChar = pair.first;
         int originalFreq = pair.second;
@@ -127,18 +123,6 @@ vector<pair<char, int>> string_Processing(string& name)
             pair.first = char(int(originalChar + originalFreq - 97) % 26 + 97);
         }
     }
-
-    for(char &c: name){
-        int key;
-        for(pair<char,int> pair:freq_prev){
-            if(pair.first == c){
-                key = pair.second;
-                break;
-            }
-        }
-        c = caesarEncode(c,key);
-    }
-
     
     //* bước 3: công dồn freq_prev với các kí tự giống nhau sau khi mã hóa
     //^ chú ý cộng dồn lên phái đầu ví dụ dưới 'e' có 2 chỗ nên ta chọn đầu vector để giữ lại
