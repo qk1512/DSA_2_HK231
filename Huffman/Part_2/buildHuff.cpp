@@ -50,9 +50,6 @@ Node* buildHuff(vector<pair<char, int>> freq)
     //* bước 1 : chuyển freq thành build theo thứ tự 0 -> n
     //TODO: này không làm được đăng kí môn đi nha
     vector<Node*> build;
-    for(pair<char,int> pairs : freq){
-        build.push_back(new Node(pairs.second,pairs.first));
-    }
 
 
     while(build.size() > 1)
