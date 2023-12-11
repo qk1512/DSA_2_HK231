@@ -25,50 +25,183 @@ public:
     Node(int weight, char c = '\0',Node* left = nullptr, Node* right = nullptr): height(1), weight(weight), c(c), left(left), right(right) {}
 };
 
-//* cân bằng node yêu cầu xét mất cân bằng loại nào rồi quay nhưng count >= 3 thì dừng
-//* trường hợp LL -> tính là count được cộng thêm 1
-//* trường hợp RR -> tính là count được cộng thêm 1
-//* trường hợp RL -> tính là count được cộng thêm 2
-//* trường hợp LR -> tính là count được cộng thêm 2
-//* nếu trường hợp LL cũng là LR -> xét như Trường hợp LL
-//* nếu trường hợp RL cũng là RR -> xét như Trường hợp RR
-//* yêu cầu dùng height để xử lí -> cấm dùng tính height đệ quy :<< độ phức tạp hơi mệt đó
-//^ chú ý vì RL LR tính 2 lần nên khi count = 2 mà phải xử lí 1 này thì -> làm 1 lần rồi dừng
-Node* balanceNode(Node* node, int& count) 
+int height(Node *node)
 {
-    //TODO
+    if (node == nullptr)
+    {
+        return 0;
+    }
+    return 1 + max(height(node->left), height(node->right));
 }
 
-//* tiến hành đệ quy theo preOrder -> nếu count >= 3 thì dừng lại không cân bằng nữa
-Node* balanceTree(Node* node, int& count)
+int balanceFactor(Node *node)
 {
-    //TODO
+    return (node == nullptr) ? 0 : height(node->left) - height(node->right);
 }
 
-Node* buildHuff(vector<pair<char, int>> freq)
+void updateHeight(Node *node)
+{
+    if (node != nullptr)
+    {
+        node->height = 1 + std::max(height(node->left), height(node->right));
+    }
+}
+
+Node *rotateRight(Node *y)
+{
+    Node *x = y->left;
+    Node *T2 = x->right;
+
+    // Perform rotation
+    x->right = y;
+    y->left = T2;
+
+    // Update heights
+    updateHeight(y);
+    updateHeight(x);
+
+    return x;
+}
+
+Node *rotateLeft(Node *x)
+{
+    Node *y = x->right;
+    Node *T2 = y->left;
+
+    // Perform rotation
+    y->left = x;
+    x->right = T2;
+
+    // Update heights
+    updateHeight(x);
+    updateHeight(y);
+
+    return y;
+}
+
+Node *balance(Node *node, int &count)
+{
+    // Update height of current node
+    updateHeight(node);
+
+    // Get the balance factor to check if this node became unbalanced
+    int balance = balanceFactor(node);
+
+    // Left Heavy
+    if (balance > 1)
+    {
+        if (balanceFactor(node->left) >= 0)
+        {
+            // Left Left Case
+            count++;
+            return rotateRight(node);
+        }
+        else
+        {
+            // Left Right Case
+            if(count >= 2) return node;
+            count += 2;
+            node->left = rotateLeft(node->left);
+            return rotateRight(node);
+        }
+    }
+
+    // Right Heavy
+    if (balance < -1)
+    {
+        if (balanceFactor(node->right) <= 0)
+        {
+            // Right Right Case
+            count++;
+            return rotateLeft(node);
+        }
+        else
+        {
+            // Right Left Case
+            if(count >= 2) return node;
+            count += 2;
+            node->right = rotateRight(node->right);
+            return rotateLeft(node);
+        }
+    }
+
+    // Node is still balanced
+    return node;
+}
+
+Node *balanceTreeRecursive(Node *node, int &count)
+{
+    // Base case: empty tree or leaf node
+    if (node == nullptr)
+    {
+        return nullptr;
+    }
+    if (count >= 3)
+        return node;
+    
+    node = balance(node,count);
+
+    // Balance the left subtree
+    node->left = balanceTreeRecursive(node->left, count);
+
+    // Balance the right subtree
+    node->right = balanceTreeRecursive(node->right, count);
+
+    // Balance the current node
+    return balance(node, count);
+}
+
+bool compareNode(Node *temp_1, Node *temp_2)
+{
+    if (temp_1->weight != temp_2->weight)
+    {
+        return temp_1->weight > temp_2->weight;
+    }
+    else
+    {
+        if (temp_1->c == '\0')
+            return true;
+        else if (temp_2->c == '\0')
+            return true;
+        else if (isupper(temp_1->c) && !(isupper(temp_2->c)))
+            return true;
+        else if (!isupper(temp_1->c) && isupper(temp_2->c))
+            return false;
+        else
+            return temp_1->c > temp_2->c;
+    }
+}
+
+Node *buildHuff(vector<pair<char, int>> freq)
 {
     //* bước 1 : chuyển freq thành build theo thứ tự 0 -> n
-    //TODO: này không làm được đăng kí môn đi nha
-    vector<Node*> build;
-
-
-    while(build.size() > 1)
+    vector<Node *> build;
+    for (pair<char, int> pairs : freq)
     {
-        //TODO: lấy ra node nhỏ nhất thứ nhất và nhỏ nhất thứ 2 (phần tử cuối vector)
-        //TODO: tạo ra node nới có con bên trái là node nhỏ nhất và bên phải là node nhỏ nhất thứ 2 -> cập nhật weight, height của node mới
-        //^ chú ý : cập nhật height, weight
+        build.push_back(new Node(pairs.second, pairs.first));
+    }
+
+    while (build.size() > 1)
+    {
         int count = 0;
-        Node* newNode = nullptr;
+        Node *newNode = new Node('\0');
+        Node *temp_left = build.back();
+        build.pop_back();
+        Node *temp_right = build.back();
+        build.pop_back();
 
+        newNode->left = temp_left;
+        newNode->right = temp_right;
+        newNode->weight = temp_left->weight + temp_right->weight;
+        newNode->height = height(newNode);
 
-        //TODO: đưa node mới vào trong vector -> đảm bảo vector luôn giảm dần như ban đầu
-        //^ chú ý nếu bằng nhau thì xem như node mới luôn lớn hơn các node bằng giá trị weight -> ý là xếp nó gần head hơn
+        newNode = balanceTreeRecursive(newNode,count);
+        build.push_back(newNode);
+        sort(build.begin(), build.end(), compareNode);
+    }
 
-    }		
     return build[0];
 }
-
-
 
 //*********** code bên dưới không bận tâm ***************************
 bool areHuffmanTreesEqual(const Node* tree1, const Node* tree2);
