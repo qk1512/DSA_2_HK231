@@ -29,7 +29,16 @@ public:
 //^ chú ý: cứ node bên trái thì mã hóa là '0', node bên phải mã hóa là '1'.
 void encodingHuffman_rec(vector<string>& encoding, Node* node, string s = "")
 {
-    //TODO 
+    //TODO
+    if(node == nullptr) return;
+
+    if(node -> left == nullptr && node -> right == nullptr){
+        encoding[node -> c] = s;
+        return;
+    } 
+
+    encodingHuffman_rec(encoding,node -> left, s + '0');
+    encodingHuffman_rec(encoding,node -> right, s + '1');
 }
 //* đầu vào là 1 cây và name đã được mã hóa Caesar -> đầu ra là result kết quả cần tìm.
 int encodingHuffman(Node * root,string nameCaesar)
@@ -41,26 +50,30 @@ int encodingHuffman(Node * root,string nameCaesar)
     vector<string> encoding(256, "");
     encodingHuffman_rec(encoding, root);
 
+    
     //* bước 2 lấy ra 10 kí tự nhị phân cuối sau khi mã hóa nameCaesar thành mã nhị phân lấy từ phải đên trái 
     //! VD : 00000000000000000001 -> kq: 10000000000
     //^ chú ý: đừng có mà giải mã hết nameCaesar -> giải mã khi nào đủ 10 kí tự nhị phân là dừng
     //TODO 
+    string nameCaesar_encode = "";
+    for(char c : nameCaesar){
+        for(int i = 0; i < encoding.size(); i++){
+            if(char(i) == c) nameCaesar_encode += encoding[i];
+        }
+    }
 
-
-    //* bước 3 mã hóa binary sang thập phân -> này ez rồi
+    
     int result = 0;
-    //TODO 
+    
+    reverse(nameCaesar_encode.begin(),nameCaesar_encode.end());
+    
+    int size_encode = 10;
+    if(nameCaesar_encode.size() <= 10) size_encode = nameCaesar_encode.size();
 
-    //* kiểm tra test thôi nếu bạn thầy mình bị sai
-    // cout << "nameCaesar = " << nameCaesar << endl;
-    // cout << "encoding : ";
-    // for(int i = 0; i < encoding.size(); i++) 
-    // {
-    //     if(encoding[i] != "") cout << char(i) << "=" << encoding[i] << " - ";
-    // }
-    // cout << "\nbinary = " << binary << endl;
-    // cout << "result = " << result << endl;
-    //********************
+    for(int i = 0; i < size_encode; i++){
+        result += (nameCaesar_encode[i] - '0') * pow(2, size_encode - 1 - i);
+    }
+    //TODO 
 
     return result;
 }
@@ -73,7 +86,10 @@ int main()
         Node* root = new Node(4, '\0', 
                                     new Node(1, 'a'),
                                     new Node(1, 'b'));
-        string nameCaesar = "aab";nameCaesar.reserve();
+        string nameCaesar = "aab";
+
+        reverse(nameCaesar.begin(), nameCaesar.end());
+      
         int result = 1;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
@@ -91,7 +107,7 @@ int main()
         Node* root = new Node(4, '\0', 
                                     new Node(1, 'a'),
                                     new Node(1, 'b'));
-        string nameCaesar = "baa";nameCaesar.reserve();
+        string nameCaesar = "baa";reverse(nameCaesar.begin(), nameCaesar.end());
         int result = 4;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
@@ -111,7 +127,7 @@ int main()
                                     new Node(1, 'a'),
                                     new Node(1, 'b'));
         string nameCaesar = "baaaaaaaaba";
-        nameCaesar.reserve();
+        reverse(nameCaesar.begin(), nameCaesar.end());
         int result = pow(2,9) + 1;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
@@ -132,7 +148,7 @@ int main()
         Node* root = new Node(4, '\0', 
                                     new Node(1, 'a'),
                                     new Node(1, 'b'));
-        string nameCaesar = "aaaaaaaaaab";nameCaesar.reserve();
+        string nameCaesar = "aaaaaaaaaab";reverse(nameCaesar.begin(), nameCaesar.end());
         int result = 0;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
@@ -158,7 +174,7 @@ int main()
                                         new Node(1, 'a'),
                                         new Node(1, 'b')),
                                     new Node(10, 'e')));
-        string nameCaesar = "e";nameCaesar.reserve();
+        string nameCaesar = "e";reverse(nameCaesar.begin(), nameCaesar.end());
         int result = 3;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
@@ -184,8 +200,8 @@ int main()
                                         new Node(1, 'a'),
                                         new Node(1, 'b')),
                                     new Node(10, 'e')));
-        string nameCaesar = "dddda";nameCaesar.reserve();
-        int result = 2;
+        string nameCaesar = "dddda";reverse(nameCaesar.begin(), nameCaesar.end());
+        int result = 0;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
         {
@@ -211,8 +227,8 @@ int main()
                                         new Node(1, 'a'),
                                         new Node(1, 'b')),
                                     new Node(10, 'e')));
-        string nameCaesar = "eeeea";nameCaesar.reserve();
-        int result = 1022;
+        string nameCaesar = "eeeea";reverse(nameCaesar.begin(), nameCaesar.end());
+        int result = 1020;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
         {
@@ -237,7 +253,7 @@ int main()
                                         new Node(1, 'a'),
                                         new Node(1, 'b')),
                                     new Node(10, 'e')));
-        string nameCaesar = "eeeeec";nameCaesar.reserve();
+        string nameCaesar = "eeeeec";reverse(nameCaesar.begin(), nameCaesar.end());
         int result = 1023;
         int output_you = encodingHuffman(root, nameCaesar);
         if(result != output_you)
