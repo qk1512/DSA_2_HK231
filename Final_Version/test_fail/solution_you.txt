@@ -1,0 +1,401 @@
+MAXSIZE 10
+Line 2: LAPSE BkBfCCaakDbaDdBkdAABabaCACbBcaCdBAfkadcffbaabcaBc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 3: LAPSE AdafffcdDDaAdBAdDdDcCddBCkAdfCBBDBckdckCdcbbdcdcCD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 4: LAPSE DkCCkadDfccbAdaCBbbfBkfDBACddfAcCcakdAbDA
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 5: LAPSE fcBkacBCfdbdBCfAdDDfCfDdAbAbcAddBccbBAAbB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 6: LAPSE DbbfaCdabABdkdAacckbcdkCBcckfdCdfcCkDbCdakcABadkB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 7: LAPSE dbBabBacdkCBDfbdcDfbffAbkkakCdk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 8: LAPSE fcdDaCfbbCCAcACCcAfaACcaBkBAbkfaC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 9: LAPSE CccafDbaAbkdbCkccBbfadDbfBBDkCfadCkDbDAkdbbkDcA
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 10: LAPSE AdkfcfAcBDAdkBACcAfBAfaDd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 11: LAPSE cfdAfabBfcACCkCdcaAakdakAbAABcbcdAC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 12: LAPSE fdBfAbkDffCkCkDadbDfbABkAkfADbBffCbbkCCBddCb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 13: LAPSE BcdafkcfdBfccccafBfDdDbBCdCBacab
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 14: LAPSE BcdDBBbccCdCbcCfbDbDkDAfbkfcCcfcfCcaCfBCCfd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 15: LAPSE fcakAffCAbAcDABbCABDBabckDkabkcfabBcDCakB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 16: LAPSE cbBdfBdbDbBaADBDDaDadfaAkfkCAB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 17: LAPSE kdCBdkCCkDcadDkfCdCdckAdaBfdbfAAdBDkdbfDA
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 18: LAPSE ddAkACcBAbCBdfBDAkACCaddk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 19: LAPSE kffDbdaAcdcCckCACbBADcBBa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 20: LAPSE CafBdBBbDkBaAdccDdffaCBCAkb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 21: LAPSE BDAAfbfAABddaDbfcbBkckBfcbfACdBAfBDkfDaDCaaDbAABa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 22: LAPSE DbAfbbACffDakDcDDCAAaAffCABdCbCkCdBcAdkaafb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 23: LAPSE kfBaCfCbBCkCdDcbAckaCdaABa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 24: LAPSE DdcbkCAAdcADAkdkCckfkfckddckBCckaAkfBfCcDdAkcCD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 25: LAPSE kDkCCaaDdCfBACbAAADAccDdDcdbDfBbDBDB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 26: LAPSE AABkBfBBkdDBBBAbAbBABDkCAcaaDfbcCDCafdfDbBcDCaCdD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 27: LAPSE cabCakDCkBbDCbbCACCBakcbfBABDDfbbkDfCCcaAbBbcAdkfC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 28: LAPSE dcakacAkBkfkckfCACCbfCDdkAkDDd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 29: LAPSE BDcCBdcDDkbCdkcBfDACDkcakdbDakaDDfCC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 30: LAPSE dCdbBCaaaaAaDAkbDBfCdCAaddBDCCDfcbAd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 31: LAPSE bbDAdcCBaDdCACCaCdakakAAbAcCDbdCbkbfddBaaBcckadAk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 32: LAPSE aDcDBdCBAAaDbdkAfBbDBaBkakdcCAACcacbB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 33: LAPSE faccABDcbBckcCDddDadACbkkdDbkBcCACAdDadAk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 34: LAPSE bdbkadkadDaBbACCddCfDfdkkb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 35: LAPSE BckkAAfDaBdabaDBbkAakbDACd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 36: LAPSE CBBACbafCadCCkfdcDkdCccacBcdfADACBkD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 37: LAPSE kBkbfDfcCkCcbdAAaAdDbffddACad
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 38: LAPSE AkkBkBDBCCCfDBkckDDbAbcAbkADDadkD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 39: LAPSE fDdbaacBddBDkDfBCdBCBfbcfdbCB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 40: LAPSE BccdcBcfaCkACbDdAfDacaAkAfDbACd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 41: LAPSE dCkDfCcDfckbkbaADfkBakakcBcdCdCBBff
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 42: LAPSE adacDbdDfaABccBBdDfkCDCbdCBcffDdkkBdcfafafcDcA
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 43: LAPSE DcCBADkaCAaffadCCBDbCbckcbCAABBb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 44: LAPSE bBDfBcDADdcCacaADkCbkbkBcacbdcadaC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 45: LAPSE AdBcdbackkbbdkdCccAbADakffBkfcbfaDADfckbfDca
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 46: LAPSE ddCcCccdkaaffCdAabccCDfAdBkbCCCdDCDfdCCcfbdb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 47: LAPSE DBcaadBDDfCABcDDDdCkaBkDdCDBCaccBkBdafCCfk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 48: LAPSE BfbdaAfDdcfCADCDbdbBkccfDfc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 49: LAPSE DbfBDdAkdkkkcDdcbadfBbdcCkabBCacfaaak
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 50: LAPSE aBcDDBDbBfbafABkbAaadAcBDdDCbCCffBDbCbCAaabaa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 51: LAPSE kCBCcBCkaBCbkbCcaabCcffBcaDCDAfCDDdkaAdDDcBabcc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 52: LAPSE aBfbdfaBAdcdDCaDbfadCAcAbBAABCDacfkcDfaDdackc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 53: LAPSE AkbfDaAbBacakcbaCbaCaDkCkddfCCDakbcABffkBCbbdf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 54: LAPSE CfdDDckDfkbAAbACcbCAaCkadacaBcDCbDAacakaCda
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 55: LAPSE BckBbDDkkafadafDkbDDkfCBAbDAabBf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 56: LAPSE bdkbbcckadBAfcaCkacDdfCCABAkADf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 57: LAPSE DkakdbcACBcADDCbCaaAbDkadakbfabkcdaAdDaDdAkAak
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 58: LAPSE adfBCBAbCffaAAaAcBbkBbdfBk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 59: LAPSE fDabDDcbkAkBfCdDbAfkkDcdCdkccfBAAdfACfDcfCDakCAA
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 60: LAPSE kBcBDddCBfdAacDADfaakBBbfCdkBbcbckdBcbACDbbDD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 61: LAPSE aaCDBdDkfkaCDkckbacbckDCbCbDDBdDf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 62: LAPSE aBADBkdaAfcACABBAbbDffDaDbkBkbCCcfkDaaAADDaBCdC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 63: LAPSE CDaBadaBdCkdCcBCckbCcAbdAdAkbbDkabDBBa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 64: LAPSE DkafffakfbCBcfbddDAdCkABfD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 65: LAPSE AbBAfcBBdBbDcCCaDdBfBfCddBB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 66: LAPSE ABfcCbbadCdDcbBDCcdcbcfAddkaBfffDkCacDBBkBC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 67: LAPSE bcAAkcBbCkfcaAAabbDcbADfcBdc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 68: LAPSE cfCacaDfbCfaADcAckDdddbAcAdCbkfDfCfDD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 69: LAPSE BCACdfDbDBBfBcBkCCaaADDaCdDBCBBkAbDba
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 70: LAPSE BaAakaDackfbbbaCddAakCBabbdfD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 71: LAPSE cbacbCdccBdkDBBcdDCCfBCCcBBBbBakaAcdbbBDckkbDdBkd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 72: LAPSE cAffCckAcbfCacdkBccBDcaffkAbbcAkCCkBdCbDaB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 73: LAPSE caBDBCbAdCAdkaCBcDbcDffBCB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 74: LAPSE kcdaBaAfbaadkaCaBcCakCCCdkBBkCAaCCcDaCAcaAbDDdDfBb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 75: LAPSE aBkdddfAbbcBBckfccCafdDaACaDBbfaD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 76: LAPSE DfdBbaBaaCcDacdAkBBBDkcafaaAaaBdbfcAbfkCB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 77: LAPSE fkcbAdADdBbBAkdBBdCCADBfAkDB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 78: LAPSE DAaABBdfaAfcfDDfbDcDBbkdCADDf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 79: LAPSE acBkDkBADDDcACAdfBkaCfbbBDkd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 80: LAPSE AfkDcdkCbkakfABdBffaDfbBacCDakAcDDAAAdbB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 81: LAPSE AbafkbaACdkDadBDkbDBcadkafaCfAbcBDAckdcckkk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 82: LAPSE AfDAaCDDBDCdfffbCDcADkaAfdfaDafbcakDfdD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 83: LAPSE kckcfBdkCCBdADcaCBDcCBkadDcAkkbfAdCBdDbBf
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 84: LAPSE kcAdCkfDAkdakaDadBbDkBdfCBbbbAkbfcaCdfkaBaCkAcDAa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 85: LAPSE aBcDfddcDBkCffCcCabdkfbCkDfdACcbbbk
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 86: LAPSE BcAfBkADaCcdDBBBabAkaDDfAkDkAdbcafkaB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 87: LAPSE CbafCfaDddkcdfcBDAbffkaDfCDBBfkDbDdcb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 88: LAPSE DBcafCDCCbakAABCAcDdbAkADDAkda
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 89: LAPSE aCfbdBcckcffBDdCdDdbABBfbACbdBABCdBdcc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 90: LAPSE DDbbBkbCDCaccbDDDaBkfdkBCCbaAdfBcDbCDCaAcdcfbcCbd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 91: LAPSE bdcBBdBfkAACaDDbbCfkbfAfDfBbD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 92: LAPSE bCdaccddAfBfaACCabfBkdafc
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 93: LAPSE fBddCffCDbCDcbBDDfAaDkBAABbbbcAcddBabddkfDadBkdfb
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 94: LAPSE cCcDDAkAaBfdDkDbcdCDdadCDdfCa
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 95: LAPSE kbCBBDaACAbfdCcdbfbbbDaaCbCackbDABAAAbckAad
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 96: LAPSE CbAffAfbDABaCCBfbckcbbccfdkdfBAdbbdCfCcdkfdD
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 97: LAPSE dcBBBdbccacafDBkBkkDdCkcafab
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 98: LAPSE CBcAadAdDfbAAADadkddkbkaBbBfbdcdfDCDkkkcAkaB
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 99: LAPSE DcaBddccfDDBBfdkDABfBkAbDCbfacka
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 100: LAPSE kfCAAfAfdckkabDkfDfcfdBAacAccbfCcABaBcdadkdaADaC
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
+Line 101: LAPSE ffBBkbcacaaBaBkdDfbbBBabdaCAfBccbdAkbAAfkCbbbkADDd
+freq_LAPSE : 
+result_LAPSE : 0
+root_LAPSE : 
